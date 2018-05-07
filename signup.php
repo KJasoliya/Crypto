@@ -1,6 +1,8 @@
 <?php include 'header.php'; ?>
 <?php include_once 'config.php'; ?>
 <?php
+
+
 if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
     $userName = htmlspecialchars($_POST["userName"]);
     $userPassword = $_POST["pass_confirmation"];
@@ -62,8 +64,7 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
         setcookie("lastloginday", date("Y-m-d"), time() + (86400 * 30), "/");
         header("Location: ciphers.php");
     } else {
-
-        header("Location:dashboard.php");
+        header("Location:email.php");
     }
 }
 
